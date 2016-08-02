@@ -1,0 +1,471 @@
+[
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "#Sample feature file for Behavior-Driven Testing and Development training"
+      },
+      {
+        "line": 2,
+        "value": "#Author: Fernanda Menks - fernanda.menks@accenture.com"
+      },
+      {
+        "line": 3,
+        "value": "#Creation date: July 31, 2016"
+      }
+    ],
+    "line": 5,
+    "elements": [
+      {
+        "comments": [
+          {
+            "line": 12,
+            "value": "#Login information for generic user so all scenarios will use the same starting point"
+          }
+        ],
+        "line": 13,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 357608714,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "a user account owned by generic user",
+            "match": {
+              "location": "AC001_SampleBanking_StepDefinition.a_user_account_owned_by_generic_user()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 60474,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "bank url is \u003c\u003c\u003cURL\u003e\u003e\u003e",
+            "match": {
+              "location": "AC001_SampleBanking_StepDefinition.bank_url_is_URL()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 55614,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "username is \u003c\u003c\u003cusername\u003e\u003e\u003e",
+            "match": {
+              "location": "AC001_SampleBanking_StepDefinition.username_is_username()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2855768,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "password is \u003c\u003c\u003cpassword\u003e\u003e\u003e",
+            "match": {
+              "location": "AC001_SampleBanking_StepDefinition.password_is_password(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "URL",
+                  "username",
+                  "password"
+                ],
+                "line": 19
+              },
+              {
+                "cells": [
+                  "http://12345.mykidsbank.org",
+                  "client",
+                  "pwd123"
+                ],
+                "line": 20
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "line": 23,
+        "name": "Make a deposit",
+        "description": "",
+        "id": "manage-simple-transactions-in-a-banking-account;make-a-deposit",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5171592,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "my checking account has a balance of 1000",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1000",
+                  "offset": 37
+                }
+              ],
+              "location": "AC001_SampleBanking_StepDefinition.my_checking_account_has_a_balance_of(int)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 196540,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "I deposit 500 to my checking account",
+            "match": {
+              "arguments": [
+                {
+                  "val": "500",
+                  "offset": 10
+                }
+              ],
+              "location": "AC001_SampleBanking_StepDefinition.i_deposit_to_my_checking_account(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 262953,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "I should have 1500 as balance",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1500",
+                  "offset": 14
+                }
+              ],
+              "location": "AC001_SampleBanking_StepDefinition.i_should_have_as_balance(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 22,
+            "name": "@TC_001"
+          },
+          {
+            "line": 22,
+            "name": "@in_progress"
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 12,
+            "value": "#Login information for generic user so all scenarios will use the same starting point"
+          }
+        ],
+        "line": 13,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 206259,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "a user account owned by generic user",
+            "match": {
+              "location": "AC001_SampleBanking_StepDefinition.a_user_account_owned_by_generic_user()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 72353,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "bank url is \u003c\u003c\u003cURL\u003e\u003e\u003e",
+            "match": {
+              "location": "AC001_SampleBanking_StepDefinition.bank_url_is_URL()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 58854,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "username is \u003c\u003c\u003cusername\u003e\u003e\u003e",
+            "match": {
+              "location": "AC001_SampleBanking_StepDefinition.username_is_username()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 79912,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "password is \u003c\u003c\u003cpassword\u003e\u003e\u003e",
+            "match": {
+              "location": "AC001_SampleBanking_StepDefinition.password_is_password(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "URL",
+                  "username",
+                  "password"
+                ],
+                "line": 19
+              },
+              {
+                "cells": [
+                  "http://12345.mykidsbank.org",
+                  "client",
+                  "pwd123"
+                ],
+                "line": 20
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "line": 37,
+        "name": "Make a withdrawn",
+        "description": "",
+        "id": "manage-simple-transactions-in-a-banking-account;make-a-withdrawn;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 31,
+            "name": "my checking account has a balance of \u003c\u003c1500\u003e\u003e",
+            "match": {},
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 32,
+            "name": "I withdrawn \u003c\u003c200\u003e\u003e from my checking account",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 14
+                }
+              ],
+              "location": "AC001_SampleBanking_StepDefinition.i_withdrawn_from_my_checking_account(int)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 33,
+            "name": "I should have \u003c\u003c1300\u003e\u003e as balance",
+            "match": {},
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 29,
+            "name": "@TC002"
+          },
+          {
+            "line": 29,
+            "name": "@signed-off"
+          }
+        ]
+      },
+      {
+        "comments": [
+          {
+            "line": 12,
+            "value": "#Login information for generic user so all scenarios will use the same starting point"
+          }
+        ],
+        "line": 13,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 174402,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "a user account owned by generic user",
+            "match": {
+              "location": "AC001_SampleBanking_StepDefinition.a_user_account_owned_by_generic_user()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 65873,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "bank url is \u003c\u003c\u003cURL\u003e\u003e\u003e",
+            "match": {
+              "location": "AC001_SampleBanking_StepDefinition.bank_url_is_URL()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 58854,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "username is \u003c\u003c\u003cusername\u003e\u003e\u003e",
+            "match": {
+              "location": "AC001_SampleBanking_StepDefinition.username_is_username()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 84772,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "password is \u003c\u003c\u003cpassword\u003e\u003e\u003e",
+            "match": {
+              "location": "AC001_SampleBanking_StepDefinition.password_is_password(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "URL",
+                  "username",
+                  "password"
+                ],
+                "line": 19
+              },
+              {
+                "cells": [
+                  "http://12345.mykidsbank.org",
+                  "client",
+                  "pwd123"
+                ],
+                "line": 20
+              }
+            ],
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "line": 38,
+        "name": "Make a withdrawn",
+        "description": "",
+        "id": "manage-simple-transactions-in-a-banking-account;make-a-withdrawn;;3",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 31,
+            "name": "my checking account has a balance of \u003c\u003c1300\u003e\u003e",
+            "match": {},
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 32,
+            "name": "I withdrawn \u003c\u003c0\u003e\u003e from my checking account",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 14
+                }
+              ],
+              "location": "AC001_SampleBanking_StepDefinition.i_withdrawn_from_my_checking_account(int)"
+            },
+            "matchedColumns": [
+              1
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 33,
+            "name": "I should have \u003c\u003c1300\u003e\u003e as balance",
+            "match": {},
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 29,
+            "name": "@TC002"
+          },
+          {
+            "line": 29,
+            "name": "@signed-off"
+          }
+        ]
+      }
+    ],
+    "name": "Manage simple transactions in a banking account",
+    "description": "       In order to manage my money more efficiently\r\n       As a bank client\r\n       TC_001: I want to make a deposit and withdraw money whenever I need to\r\n       TC_002: I want to make a transfer to another bank account whenever I need to\r\n       TC_003: I want to make a transfer to an international bank account",
+    "id": "manage-simple-transactions-in-a-banking-account",
+    "keyword": "Feature",
+    "uri": "Sample banking acceptance criteria.feature"
+  }
+]
