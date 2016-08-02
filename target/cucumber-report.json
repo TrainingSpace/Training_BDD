@@ -14,16 +14,16 @@
         "value": "#Creation date: July 31, 2016"
       }
     ],
-    "line": 5,
+    "line": 4,
     "elements": [
       {
         "comments": [
           {
-            "line": 12,
+            "line": 11,
             "value": "#Login information for generic user so all scenarios will use the same starting point"
           }
         ],
-        "line": 13,
+        "line": 12,
         "name": "",
         "description": "",
         "type": "background",
@@ -31,74 +31,32 @@
         "steps": [
           {
             "result": {
-              "duration": 357608714,
+              "duration": 3246613270,
               "status": "passed"
             },
-            "line": 14,
-            "name": "a user account owned by generic user",
+            "line": 13,
+            "name": "I am in the bank web app",
             "match": {
-              "location": "AC001_SampleBanking_StepDefinition.a_user_account_owned_by_generic_user()"
+              "location": "AC001_SampleBanking_StepDefinition.shouldNavigateToBankWebsite()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 60474,
+              "duration": 777078781,
               "status": "passed"
             },
-            "line": 15,
-            "name": "bank url is \u003c\u003c\u003cURL\u003e\u003e\u003e",
+            "line": 14,
+            "name": "I am logged in",
             "match": {
-              "location": "AC001_SampleBanking_StepDefinition.bank_url_is_URL()"
+              "location": "AC001_SampleBanking_StepDefinition.shouldLogin()"
             },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 55614,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "username is \u003c\u003c\u003cusername\u003e\u003e\u003e",
-            "match": {
-              "location": "AC001_SampleBanking_StepDefinition.username_is_username()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 2855768,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "password is \u003c\u003c\u003cpassword\u003e\u003e\u003e",
-            "match": {
-              "location": "AC001_SampleBanking_StepDefinition.password_is_password(DataTable)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "URL",
-                  "username",
-                  "password"
-                ],
-                "line": 19
-              },
-              {
-                "cells": [
-                  "http://12345.mykidsbank.org",
-                  "client",
-                  "pwd123"
-                ],
-                "line": 20
-              }
-            ],
             "keyword": "And "
           }
         ]
       },
       {
-        "line": 23,
+        "line": 17,
         "name": "Make a deposit",
         "description": "",
         "id": "manage-simple-transactions-in-a-banking-account;make-a-deposit",
@@ -107,10 +65,10 @@
         "steps": [
           {
             "result": {
-              "duration": 5171592,
+              "duration": 2024810,
               "status": "passed"
             },
-            "line": 24,
+            "line": 18,
             "name": "my checking account has a balance of 1000",
             "match": {
               "arguments": [
@@ -125,10 +83,10 @@
           },
           {
             "result": {
-              "duration": 196540,
+              "duration": 555067114,
               "status": "passed"
             },
-            "line": 25,
+            "line": 19,
             "name": "I deposit 500 to my checking account",
             "match": {
               "arguments": [
@@ -143,10 +101,10 @@
           },
           {
             "result": {
-              "duration": 262953,
+              "duration": 205324380,
               "status": "passed"
             },
-            "line": 26,
+            "line": 20,
             "name": "I should have 1500 as balance",
             "match": {
               "arguments": [
@@ -162,11 +120,11 @@
         ],
         "tags": [
           {
-            "line": 22,
+            "line": 16,
             "name": "@TC_001"
           },
           {
-            "line": 22,
+            "line": 16,
             "name": "@in_progress"
           }
         ]
@@ -174,11 +132,11 @@
       {
         "comments": [
           {
-            "line": 12,
+            "line": 11,
             "value": "#Login information for generic user so all scenarios will use the same starting point"
           }
         ],
-        "line": 13,
+        "line": 12,
         "name": "",
         "description": "",
         "type": "background",
@@ -186,87 +144,55 @@
         "steps": [
           {
             "result": {
-              "duration": 206259,
+              "duration": 2780029708,
               "status": "passed"
             },
-            "line": 14,
-            "name": "a user account owned by generic user",
+            "line": 13,
+            "name": "I am in the bank web app",
             "match": {
-              "location": "AC001_SampleBanking_StepDefinition.a_user_account_owned_by_generic_user()"
+              "location": "AC001_SampleBanking_StepDefinition.shouldNavigateToBankWebsite()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 72353,
+              "duration": 564065967,
               "status": "passed"
             },
-            "line": 15,
-            "name": "bank url is \u003c\u003c\u003cURL\u003e\u003e\u003e",
+            "line": 14,
+            "name": "I am logged in",
             "match": {
-              "location": "AC001_SampleBanking_StepDefinition.bank_url_is_URL()"
+              "location": "AC001_SampleBanking_StepDefinition.shouldLogin()"
             },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 58854,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "username is \u003c\u003c\u003cusername\u003e\u003e\u003e",
-            "match": {
-              "location": "AC001_SampleBanking_StepDefinition.username_is_username()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 79912,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "password is \u003c\u003c\u003cpassword\u003e\u003e\u003e",
-            "match": {
-              "location": "AC001_SampleBanking_StepDefinition.password_is_password(DataTable)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "URL",
-                  "username",
-                  "password"
-                ],
-                "line": 19
-              },
-              {
-                "cells": [
-                  "http://12345.mykidsbank.org",
-                  "client",
-                  "pwd123"
-                ],
-                "line": 20
-              }
-            ],
             "keyword": "And "
           }
         ]
       },
       {
-        "line": 37,
-        "name": "Make a withdrawn",
+        "line": 31,
+        "name": "Make a withdraw",
         "description": "",
-        "id": "manage-simple-transactions-in-a-banking-account;make-a-withdrawn;;2",
+        "id": "manage-simple-transactions-in-a-banking-account;make-a-withdraw;;2",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 449054,
+              "error_message": "junit.framework.AssertionFailedError: expected:\u003c1500\u003e but was:\u003c1000\u003e\r\n\tat junit.framework.Assert.fail(Assert.java:57)\r\n\tat junit.framework.Assert.failNotEquals(Assert.java:329)\r\n\tat junit.framework.Assert.assertEquals(Assert.java:78)\r\n\tat junit.framework.Assert.assertEquals(Assert.java:234)\r\n\tat junit.framework.Assert.assertEquals(Assert.java:241)\r\n\tat com.accenture.cucumber.Training_BDD.AC001_SampleBanking_StepDefinition.my_checking_account_has_a_balance_of(AC001_SampleBanking_StepDefinition.java:37)\r\n\tat ✽.Given my checking account has a balance of 1500(Sample banking acceptance criteria.feature:25)\r\n",
+              "status": "failed"
             },
-            "line": 31,
-            "name": "my checking account has a balance of \u003c\u003c1500\u003e\u003e",
-            "match": {},
+            "line": 25,
+            "name": "my checking account has a balance of 1500",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1500",
+                  "offset": 37
+                }
+              ],
+              "location": "AC001_SampleBanking_StepDefinition.my_checking_account_has_a_balance_of(int)"
+            },
             "matchedColumns": [
               0
             ],
@@ -276,13 +202,13 @@
             "result": {
               "status": "skipped"
             },
-            "line": 32,
-            "name": "I withdrawn \u003c\u003c200\u003e\u003e from my checking account",
+            "line": 26,
+            "name": "I withdraw 200 from my checking account",
             "match": {
               "arguments": [
                 {
                   "val": "200",
-                  "offset": 14
+                  "offset": 11
                 }
               ],
               "location": "AC001_SampleBanking_StepDefinition.i_withdrawn_from_my_checking_account(int)"
@@ -294,11 +220,19 @@
           },
           {
             "result": {
-              "status": "undefined"
+              "status": "skipped"
             },
-            "line": 33,
-            "name": "I should have \u003c\u003c1300\u003e\u003e as balance",
-            "match": {},
+            "line": 27,
+            "name": "I should have 1300 as balance",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1300",
+                  "offset": 14
+                }
+              ],
+              "location": "AC001_SampleBanking_StepDefinition.i_should_have_as_balance(int)"
+            },
             "matchedColumns": [
               2
             ],
@@ -307,11 +241,11 @@
         ],
         "tags": [
           {
-            "line": 29,
+            "line": 23,
             "name": "@TC002"
           },
           {
-            "line": 29,
+            "line": 23,
             "name": "@signed-off"
           }
         ]
@@ -319,11 +253,11 @@
       {
         "comments": [
           {
-            "line": 12,
+            "line": 11,
             "value": "#Login information for generic user so all scenarios will use the same starting point"
           }
         ],
-        "line": 13,
+        "line": 12,
         "name": "",
         "description": "",
         "type": "background",
@@ -331,87 +265,55 @@
         "steps": [
           {
             "result": {
-              "duration": 174402,
+              "duration": 3056065515,
               "status": "passed"
             },
-            "line": 14,
-            "name": "a user account owned by generic user",
+            "line": 13,
+            "name": "I am in the bank web app",
             "match": {
-              "location": "AC001_SampleBanking_StepDefinition.a_user_account_owned_by_generic_user()"
+              "location": "AC001_SampleBanking_StepDefinition.shouldNavigateToBankWebsite()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 65873,
+              "duration": 571461658,
               "status": "passed"
             },
-            "line": 15,
-            "name": "bank url is \u003c\u003c\u003cURL\u003e\u003e\u003e",
+            "line": 14,
+            "name": "I am logged in",
             "match": {
-              "location": "AC001_SampleBanking_StepDefinition.bank_url_is_URL()"
+              "location": "AC001_SampleBanking_StepDefinition.shouldLogin()"
             },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 58854,
-              "status": "passed"
-            },
-            "line": 16,
-            "name": "username is \u003c\u003c\u003cusername\u003e\u003e\u003e",
-            "match": {
-              "location": "AC001_SampleBanking_StepDefinition.username_is_username()"
-            },
-            "keyword": "And "
-          },
-          {
-            "result": {
-              "duration": 84772,
-              "status": "passed"
-            },
-            "line": 17,
-            "name": "password is \u003c\u003c\u003cpassword\u003e\u003e\u003e",
-            "match": {
-              "location": "AC001_SampleBanking_StepDefinition.password_is_password(DataTable)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "URL",
-                  "username",
-                  "password"
-                ],
-                "line": 19
-              },
-              {
-                "cells": [
-                  "http://12345.mykidsbank.org",
-                  "client",
-                  "pwd123"
-                ],
-                "line": 20
-              }
-            ],
             "keyword": "And "
           }
         ]
       },
       {
-        "line": 38,
-        "name": "Make a withdrawn",
+        "line": 32,
+        "name": "Make a withdraw",
         "description": "",
-        "id": "manage-simple-transactions-in-a-banking-account;make-a-withdrawn;;3",
+        "id": "manage-simple-transactions-in-a-banking-account;make-a-withdraw;;3",
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "status": "undefined"
+              "duration": 243953,
+              "error_message": "junit.framework.AssertionFailedError: expected:\u003c1300\u003e but was:\u003c1000\u003e\r\n\tat junit.framework.Assert.fail(Assert.java:57)\r\n\tat junit.framework.Assert.failNotEquals(Assert.java:329)\r\n\tat junit.framework.Assert.assertEquals(Assert.java:78)\r\n\tat junit.framework.Assert.assertEquals(Assert.java:234)\r\n\tat junit.framework.Assert.assertEquals(Assert.java:241)\r\n\tat com.accenture.cucumber.Training_BDD.AC001_SampleBanking_StepDefinition.my_checking_account_has_a_balance_of(AC001_SampleBanking_StepDefinition.java:37)\r\n\tat ✽.Given my checking account has a balance of 1300(Sample banking acceptance criteria.feature:25)\r\n",
+              "status": "failed"
             },
-            "line": 31,
-            "name": "my checking account has a balance of \u003c\u003c1300\u003e\u003e",
-            "match": {},
+            "line": 25,
+            "name": "my checking account has a balance of 1300",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1300",
+                  "offset": 37
+                }
+              ],
+              "location": "AC001_SampleBanking_StepDefinition.my_checking_account_has_a_balance_of(int)"
+            },
             "matchedColumns": [
               0
             ],
@@ -421,13 +323,13 @@
             "result": {
               "status": "skipped"
             },
-            "line": 32,
-            "name": "I withdrawn \u003c\u003c0\u003e\u003e from my checking account",
+            "line": 26,
+            "name": "I withdraw 0 from my checking account",
             "match": {
               "arguments": [
                 {
                   "val": "0",
-                  "offset": 14
+                  "offset": 11
                 }
               ],
               "location": "AC001_SampleBanking_StepDefinition.i_withdrawn_from_my_checking_account(int)"
@@ -439,11 +341,19 @@
           },
           {
             "result": {
-              "status": "undefined"
+              "status": "skipped"
             },
-            "line": 33,
-            "name": "I should have \u003c\u003c1300\u003e\u003e as balance",
-            "match": {},
+            "line": 27,
+            "name": "I should have 1300 as balance",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1300",
+                  "offset": 14
+                }
+              ],
+              "location": "AC001_SampleBanking_StepDefinition.i_should_have_as_balance(int)"
+            },
             "matchedColumns": [
               2
             ],
@@ -452,11 +362,11 @@
         ],
         "tags": [
           {
-            "line": 29,
+            "line": 23,
             "name": "@TC002"
           },
           {
-            "line": 29,
+            "line": 23,
             "name": "@signed-off"
           }
         ]

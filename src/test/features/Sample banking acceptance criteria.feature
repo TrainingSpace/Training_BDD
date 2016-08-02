@@ -1,7 +1,6 @@
 #Sample feature file for Behavior-Driven Testing and Development training
 #Author: Fernanda Menks - fernanda.menks@accenture.com
 #Creation date: July 31, 2016
-
 Feature: Manage simple transactions in a banking account
          In order to manage my money more efficiently
          As a bank client
@@ -9,31 +8,25 @@ Feature: Manage simple transactions in a banking account
          TC_002: I want to make a transfer to another bank account whenever I need to
          TC_003: I want to make a transfer to an international bank account
 
-#Login information for generic user so all scenarios will use the same starting point
-Background:
-		  Given a user account owned by generic user
-          And bank url is <<<URL>>>
-          And username is <<<username>>>
-          And password is <<<password>>>
-          
-          |URL                         | username |  password  |
-          |http://12345.mykidsbank.org | client   | pwd123     |
+  #Login information for generic user so all scenarios will use the same starting point
+  Background: 
+    Given I am in the bank web app
+    And I am logged in
 
-@TC_001 @in_progress
-Scenario: Make a deposit
-          Given my checking account has a balance of 1000
-          When I deposit 500 to my checking account
-          Then I should have 1500 as balance
-		  # Include here the parametrization and data for positive and negative test
+  @TC_001 @in_progress
+  Scenario: Make a deposit
+    Given my checking account has a balance of 1000
+    When I deposit 500 to my checking account
+    Then I should have 1500 as balance
 
-@TC002 @signed-off
-Scenario Outline: Make a withdrawn
-         Given my checking account has a balance of <<<initial_balance>>>
-         When I withdrawn <<<withdrawn_amount>>> from my checking account
-         Then I should have <<<final_balance>>> as balance
+  # Include here the parametrization and data for positive and negative test
+  @TC002 @signed-off
+  Scenario Outline: Make a withdraw
+    Given my checking account has a balance of <initial_balance> before withdraw
+    When I withdraw <withdrawn_amount> from my checking account
+    Then I should have <final_balance> as balance after withdraw
 
-         Examples:
-         | initial_balance | withdrawn_amount | final_balance|
-         | 1500            | 200              | 1300         |
-         | 1300            | 0                | 1300         |
-
+    Examples: 
+      | initial_balance | withdrawn_amount | final_balance |
+      |            1000 |              200 |          1300 |
+      |            1000 |                0 |          1300 |
