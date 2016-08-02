@@ -47,14 +47,14 @@ formatter.match({
   "location": "AC001_SampleBanking_StepDefinition.shouldNavigateToBankWebsite()"
 });
 formatter.result({
-  "duration": 3246613270,
+  "duration": 3111564816,
   "status": "passed"
 });
 formatter.match({
   "location": "AC001_SampleBanking_StepDefinition.shouldLogin()"
 });
 formatter.result({
-  "duration": 777078781,
+  "duration": 636544397,
   "status": "passed"
 });
 formatter.scenario({
@@ -100,7 +100,7 @@ formatter.match({
   "location": "AC001_SampleBanking_StepDefinition.my_checking_account_has_a_balance_of(int)"
 });
 formatter.result({
-  "duration": 2024810,
+  "duration": 1071285,
   "status": "passed"
 });
 formatter.match({
@@ -113,7 +113,7 @@ formatter.match({
   "location": "AC001_SampleBanking_StepDefinition.i_deposit_to_my_checking_account(int)"
 });
 formatter.result({
-  "duration": 555067114,
+  "duration": 453659174,
   "status": "passed"
 });
 formatter.match({
@@ -126,7 +126,7 @@ formatter.match({
   "location": "AC001_SampleBanking_StepDefinition.i_should_have_as_balance(int)"
 });
 formatter.result({
-  "duration": 205324380,
+  "duration": 208738215,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -155,7 +155,7 @@ formatter.scenarioOutline({
 });
 formatter.step({
   "line": 25,
-  "name": "my checking account has a balance of \u003cinitial_balance\u003e",
+  "name": "my checking account has a balance of \u003cinitial_balance\u003e before withdraw",
   "keyword": "Given "
 });
 formatter.step({
@@ -165,7 +165,7 @@ formatter.step({
 });
 formatter.step({
   "line": 27,
-  "name": "I should have \u003cfinal_balance\u003e as balance",
+  "name": "I should have \u003cfinal_balance\u003e as balance after withdraw",
   "keyword": "Then "
 });
 formatter.examples({
@@ -186,17 +186,17 @@ formatter.examples({
     {
       "cells": [
         "1500",
-        "200",
-        "1300"
+        "250",
+        "1000"
       ],
       "line": 31,
       "id": "manage-simple-transactions-in-a-banking-account;make-a-withdraw;;2"
     },
     {
       "cells": [
-        "1300",
-        "0",
-        "1300"
+        "1500",
+        "250",
+        "1000"
       ],
       "line": 32,
       "id": "manage-simple-transactions-in-a-banking-account;make-a-withdraw;;3"
@@ -231,14 +231,14 @@ formatter.match({
   "location": "AC001_SampleBanking_StepDefinition.shouldNavigateToBankWebsite()"
 });
 formatter.result({
-  "duration": 2780029708,
+  "duration": 2775424117,
   "status": "passed"
 });
 formatter.match({
   "location": "AC001_SampleBanking_StepDefinition.shouldLogin()"
 });
 formatter.result({
-  "duration": 564065967,
+  "duration": 799394154,
   "status": "passed"
 });
 formatter.scenario({
@@ -261,7 +261,7 @@ formatter.scenario({
 });
 formatter.step({
   "line": 25,
-  "name": "my checking account has a balance of 1500",
+  "name": "my checking account has a balance of 1500 before withdraw",
   "matchedColumns": [
     0
   ],
@@ -269,7 +269,7 @@ formatter.step({
 });
 formatter.step({
   "line": 26,
-  "name": "I withdraw 200 from my checking account",
+  "name": "I withdraw 250 from my checking account",
   "matchedColumns": [
     1
   ],
@@ -277,7 +277,7 @@ formatter.step({
 });
 formatter.step({
   "line": 27,
-  "name": "I should have 1300 as balance",
+  "name": "I should have 1000 as balance after withdraw",
   "matchedColumns": [
     2
   ],
@@ -290,36 +290,37 @@ formatter.match({
       "offset": 37
     }
   ],
-  "location": "AC001_SampleBanking_StepDefinition.my_checking_account_has_a_balance_of(int)"
+  "location": "AC001_SampleBanking_StepDefinition.my_checking_account_has_a_balance_of_before_withdraw(int)"
 });
 formatter.result({
-  "duration": 449054,
-  "error_message": "junit.framework.AssertionFailedError: expected:\u003c1500\u003e but was:\u003c1000\u003e\r\n\tat junit.framework.Assert.fail(Assert.java:57)\r\n\tat junit.framework.Assert.failNotEquals(Assert.java:329)\r\n\tat junit.framework.Assert.assertEquals(Assert.java:78)\r\n\tat junit.framework.Assert.assertEquals(Assert.java:234)\r\n\tat junit.framework.Assert.assertEquals(Assert.java:241)\r\n\tat com.accenture.cucumber.Training_BDD.AC001_SampleBanking_StepDefinition.my_checking_account_has_a_balance_of(AC001_SampleBanking_StepDefinition.java:37)\r\n\tat ✽.Given my checking account has a balance of 1500(Sample banking acceptance criteria.feature:25)\r\n",
-  "status": "failed"
+  "duration": 315934,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "200",
+      "val": "250",
       "offset": 11
     }
   ],
   "location": "AC001_SampleBanking_StepDefinition.i_withdrawn_from_my_checking_account(int)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 539964919,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "1300",
+      "val": "1000",
       "offset": 14
     }
   ],
-  "location": "AC001_SampleBanking_StepDefinition.i_should_have_as_balance(int)"
+  "location": "AC001_SampleBanking_StepDefinition.i_should_have_as_balance_after_withdraw(int)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 207044398,
+  "status": "passed"
 });
 formatter.background({
   "comments": [
@@ -348,14 +349,14 @@ formatter.match({
   "location": "AC001_SampleBanking_StepDefinition.shouldNavigateToBankWebsite()"
 });
 formatter.result({
-  "duration": 3056065515,
+  "duration": 2774530827,
   "status": "passed"
 });
 formatter.match({
   "location": "AC001_SampleBanking_StepDefinition.shouldLogin()"
 });
 formatter.result({
-  "duration": 571461658,
+  "duration": 568215879,
   "status": "passed"
 });
 formatter.scenario({
@@ -378,7 +379,7 @@ formatter.scenario({
 });
 formatter.step({
   "line": 25,
-  "name": "my checking account has a balance of 1300",
+  "name": "my checking account has a balance of 1500 before withdraw",
   "matchedColumns": [
     0
   ],
@@ -386,7 +387,7 @@ formatter.step({
 });
 formatter.step({
   "line": 26,
-  "name": "I withdraw 0 from my checking account",
+  "name": "I withdraw 250 from my checking account",
   "matchedColumns": [
     1
   ],
@@ -394,7 +395,7 @@ formatter.step({
 });
 formatter.step({
   "line": 27,
-  "name": "I should have 1300 as balance",
+  "name": "I should have 1000 as balance after withdraw",
   "matchedColumns": [
     2
   ],
@@ -403,39 +404,40 @@ formatter.step({
 formatter.match({
   "arguments": [
     {
-      "val": "1300",
+      "val": "1500",
       "offset": 37
     }
   ],
-  "location": "AC001_SampleBanking_StepDefinition.my_checking_account_has_a_balance_of(int)"
+  "location": "AC001_SampleBanking_StepDefinition.my_checking_account_has_a_balance_of_before_withdraw(int)"
 });
 formatter.result({
-  "duration": 243953,
-  "error_message": "junit.framework.AssertionFailedError: expected:\u003c1300\u003e but was:\u003c1000\u003e\r\n\tat junit.framework.Assert.fail(Assert.java:57)\r\n\tat junit.framework.Assert.failNotEquals(Assert.java:329)\r\n\tat junit.framework.Assert.assertEquals(Assert.java:78)\r\n\tat junit.framework.Assert.assertEquals(Assert.java:234)\r\n\tat junit.framework.Assert.assertEquals(Assert.java:241)\r\n\tat com.accenture.cucumber.Training_BDD.AC001_SampleBanking_StepDefinition.my_checking_account_has_a_balance_of(AC001_SampleBanking_StepDefinition.java:37)\r\n\tat ✽.Given my checking account has a balance of 1300(Sample banking acceptance criteria.feature:25)\r\n",
-  "status": "failed"
+  "duration": 76800,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "0",
+      "val": "250",
       "offset": 11
     }
   ],
   "location": "AC001_SampleBanking_StepDefinition.i_withdrawn_from_my_checking_account(int)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 528032908,
+  "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "1300",
+      "val": "1000",
       "offset": 14
     }
   ],
-  "location": "AC001_SampleBanking_StepDefinition.i_should_have_as_balance(int)"
+  "location": "AC001_SampleBanking_StepDefinition.i_should_have_as_balance_after_withdraw(int)"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 205700248,
+  "status": "passed"
 });
 });

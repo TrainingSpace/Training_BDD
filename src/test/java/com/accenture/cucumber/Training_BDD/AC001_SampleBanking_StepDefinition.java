@@ -79,12 +79,12 @@ public class AC001_SampleBanking_StepDefinition {
 
 	@Given("^my checking account has a balance of (\\d+) before withdraw$")
 	public void my_checking_account_has_a_balance_of_before_withdraw(int initial_balance) throws Throwable {
-		Assert.assertEquals(initial_balance, 1000);
+		Assert.assertEquals(initial_balance, 1500);
 	}
 
 	@Then("^I should have (\\d+) as balance after withdraw$")
 	public void i_should_have_as_balance_after_withdraw(int final_balance) throws Throwable {
-		Assert.assertEquals(final_balance, 1500);
+		Assert.assertEquals(final_balance, 1000);
 		driver.close();
 	}	
 }

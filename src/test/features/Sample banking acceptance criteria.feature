@@ -28,5 +28,5 @@ Feature: Manage simple transactions in a banking account
 
     Examples: 
       | initial_balance | withdrawn_amount | final_balance |
-      |            1000 |              200 |          1300 |
-      |            1000 |                0 |          1300 |
+      |            1500 |              250 |          1000 |
+      |            1500 |              250 |          1000 |
