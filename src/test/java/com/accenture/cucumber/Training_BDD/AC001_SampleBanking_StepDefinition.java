@@ -1,11 +1,14 @@
 package com.accenture.cucumber.Training_BDD;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -17,20 +20,25 @@ public class AC001_SampleBanking_StepDefinition {
 	WebDriver driver;
 	WebElement dummyElement;
 
-	@Given("^I am in the bank web app$")
-	public void shouldNavigateToBankWebsite() throws Throwable {
+	@Given("^a user access the bank web app$")
+	public void a_user_access_the_bank_web_app() throws Throwable {
 		driver = new FirefoxDriver();
 		driver.navigate().to("http://www.mykidsbank.org");
 	}
 
-	@And("^I am logged in$")
-	public void shouldLogin() throws Throwable {
-		driver.findElement(By.name("bank_id")).sendKeys("25967");
-		driver.findElement(By.name("username")).sendKeys("banker");
-		driver.findElement(By.name("password")).sendKeys("training");
+	
+	@And("^logs using the credentials$")
+	public void logs_using_the_credentials(DataTable table) throws Throwable {
+		//populates a list with the data from table
+		List<List<String>> data = table.raw();
+				
+		driver.findElement(By.name("bank_id")).sendKeys(data.get(1).get(0));
+		driver.findElement(By.name("username")).sendKeys(data.get(1).get(1));
+		driver.findElement(By.name("password")).sendKeys(data.get(1).get(2));
 		driver.findElement(By.className("login_submit_button_class")).click();
 		Assert.assertTrue("Not logged in", driver.getTitle().equals("Bank of BDD-land"));
 	}
+	
 
 	@Given("^my checking account has a balance of (\\d+)$")
 	public void my_checking_account_has_a_balance_of(int balance) throws Throwable {

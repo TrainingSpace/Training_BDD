@@ -10,8 +10,12 @@ Feature: Manage simple transactions in a banking account
 
   #Login information for generic user so all scenarios will use the same starting point
   Background: 
-    Given I am in the bank web app
-    And I am logged in
+    #Given I am in the bank web app
+    #And I am logged in
+    Given a user access the bank web app
+    And logs using the credentials
+      | bank_id | username | password | url                       |
+      |   25967 | banker   | training | http://www.mykidsbank.org |
 
   @TC_001 @in_progress
   Scenario: Make a deposit
@@ -29,4 +33,4 @@ Feature: Manage simple transactions in a banking account
     Examples: 
       | initial_balance | withdrawn_amount | final_balance |
       |            1500 |              250 |          1000 |
-      |            1500 |              250 |          1000 |
+   #   |            1500 |              250 |          1000 |

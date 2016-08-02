@@ -34,31 +34,61 @@ formatter.background({
   "keyword": "Background"
 });
 formatter.step({
-  "line": 13,
-  "name": "I am in the bank web app",
+  "comments": [
+    {
+      "line": 13,
+      "value": "#Given I am in the bank web app"
+    },
+    {
+      "line": 14,
+      "value": "#And I am logged in"
+    }
+  ],
+  "line": 15,
+  "name": "a user access the bank web app",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 14,
-  "name": "I am logged in",
+  "line": 16,
+  "name": "logs using the credentials",
+  "rows": [
+    {
+      "cells": [
+        "bank_id",
+        "username",
+        "password",
+        "url"
+      ],
+      "line": 17
+    },
+    {
+      "cells": [
+        "25967",
+        "banker",
+        "training",
+        "http://www.mykidsbank.org"
+      ],
+      "line": 18
+    }
+  ],
   "keyword": "And "
 });
 formatter.match({
-  "location": "AC001_SampleBanking_StepDefinition.shouldNavigateToBankWebsite()"
+  "location": "AC001_SampleBanking_StepDefinition.a_user_access_the_bank_web_app()"
 });
 formatter.result({
-  "duration": 3111564816,
+  "duration": 14134909001,
   "status": "passed"
 });
 formatter.match({
-  "location": "AC001_SampleBanking_StepDefinition.shouldLogin()"
+  "location": "AC001_SampleBanking_StepDefinition.logs_using_the_credentials(DataTable)"
 });
 formatter.result({
-  "duration": 636544397,
+  "duration": 5652587065,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 17,
+  "line": 21,
   "name": "Make a deposit",
   "description": "",
   "id": "manage-simple-transactions-in-a-banking-account;make-a-deposit",
@@ -66,27 +96,27 @@ formatter.scenario({
   "keyword": "Scenario",
   "tags": [
     {
-      "line": 16,
+      "line": 20,
       "name": "@TC_001"
     },
     {
-      "line": 16,
+      "line": 20,
       "name": "@in_progress"
     }
   ]
 });
 formatter.step({
-  "line": 18,
+  "line": 22,
   "name": "my checking account has a balance of 1000",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 19,
+  "line": 23,
   "name": "I deposit 500 to my checking account",
   "keyword": "When "
 });
 formatter.step({
-  "line": 20,
+  "line": 24,
   "name": "I should have 1500 as balance",
   "keyword": "Then "
 });
@@ -100,7 +130,7 @@ formatter.match({
   "location": "AC001_SampleBanking_StepDefinition.my_checking_account_has_a_balance_of(int)"
 });
 formatter.result({
-  "duration": 1071285,
+  "duration": 3438369,
   "status": "passed"
 });
 formatter.match({
@@ -113,7 +143,7 @@ formatter.match({
   "location": "AC001_SampleBanking_StepDefinition.i_deposit_to_my_checking_account(int)"
 });
 formatter.result({
-  "duration": 453659174,
+  "duration": 3803920647,
   "status": "passed"
 });
 formatter.match({
@@ -126,17 +156,17 @@ formatter.match({
   "location": "AC001_SampleBanking_StepDefinition.i_should_have_as_balance(int)"
 });
 formatter.result({
-  "duration": 208738215,
+  "duration": 924187424,
   "status": "passed"
 });
 formatter.scenarioOutline({
   "comments": [
     {
-      "line": 22,
+      "line": 26,
       "value": "# Include here the parametrization and data for positive and negative test"
     }
   ],
-  "line": 24,
+  "line": 28,
   "name": "Make a withdraw",
   "description": "",
   "id": "manage-simple-transactions-in-a-banking-account;make-a-withdraw",
@@ -144,32 +174,32 @@ formatter.scenarioOutline({
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 23,
+      "line": 27,
       "name": "@TC002"
     },
     {
-      "line": 23,
+      "line": 27,
       "name": "@signed-off"
     }
   ]
 });
 formatter.step({
-  "line": 25,
+  "line": 29,
   "name": "my checking account has a balance of \u003cinitial_balance\u003e before withdraw",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 26,
+  "line": 30,
   "name": "I withdraw \u003cwithdrawn_amount\u003e from my checking account",
   "keyword": "When "
 });
 formatter.step({
-  "line": 27,
+  "line": 31,
   "name": "I should have \u003cfinal_balance\u003e as balance after withdraw",
   "keyword": "Then "
 });
 formatter.examples({
-  "line": 29,
+  "line": 33,
   "name": "",
   "description": "",
   "id": "manage-simple-transactions-in-a-banking-account;make-a-withdraw;",
@@ -180,7 +210,7 @@ formatter.examples({
         "withdrawn_amount",
         "final_balance"
       ],
-      "line": 30,
+      "line": 34,
       "id": "manage-simple-transactions-in-a-banking-account;make-a-withdraw;;1"
     },
     {
@@ -189,17 +219,8 @@ formatter.examples({
         "250",
         "1000"
       ],
-      "line": 31,
+      "line": 35,
       "id": "manage-simple-transactions-in-a-banking-account;make-a-withdraw;;2"
-    },
-    {
-      "cells": [
-        "1500",
-        "250",
-        "1000"
-      ],
-      "line": 32,
-      "id": "manage-simple-transactions-in-a-banking-account;make-a-withdraw;;3"
     }
   ],
   "keyword": "Examples"
@@ -218,31 +239,61 @@ formatter.background({
   "keyword": "Background"
 });
 formatter.step({
-  "line": 13,
-  "name": "I am in the bank web app",
+  "comments": [
+    {
+      "line": 13,
+      "value": "#Given I am in the bank web app"
+    },
+    {
+      "line": 14,
+      "value": "#And I am logged in"
+    }
+  ],
+  "line": 15,
+  "name": "a user access the bank web app",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 14,
-  "name": "I am logged in",
+  "line": 16,
+  "name": "logs using the credentials",
+  "rows": [
+    {
+      "cells": [
+        "bank_id",
+        "username",
+        "password",
+        "url"
+      ],
+      "line": 17
+    },
+    {
+      "cells": [
+        "25967",
+        "banker",
+        "training",
+        "http://www.mykidsbank.org"
+      ],
+      "line": 18
+    }
+  ],
   "keyword": "And "
 });
 formatter.match({
-  "location": "AC001_SampleBanking_StepDefinition.shouldNavigateToBankWebsite()"
+  "location": "AC001_SampleBanking_StepDefinition.a_user_access_the_bank_web_app()"
 });
 formatter.result({
-  "duration": 2775424117,
+  "duration": 11657333180,
   "status": "passed"
 });
 formatter.match({
-  "location": "AC001_SampleBanking_StepDefinition.shouldLogin()"
+  "location": "AC001_SampleBanking_StepDefinition.logs_using_the_credentials(DataTable)"
 });
 formatter.result({
-  "duration": 799394154,
+  "duration": 4088937556,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 31,
+  "line": 35,
   "name": "Make a withdraw",
   "description": "",
   "id": "manage-simple-transactions-in-a-banking-account;make-a-withdraw;;2",
@@ -250,17 +301,17 @@ formatter.scenario({
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "line": 23,
+      "line": 27,
       "name": "@TC002"
     },
     {
-      "line": 23,
+      "line": 27,
       "name": "@signed-off"
     }
   ]
 });
 formatter.step({
-  "line": 25,
+  "line": 29,
   "name": "my checking account has a balance of 1500 before withdraw",
   "matchedColumns": [
     0
@@ -268,7 +319,7 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.step({
-  "line": 26,
+  "line": 30,
   "name": "I withdraw 250 from my checking account",
   "matchedColumns": [
     1
@@ -276,7 +327,7 @@ formatter.step({
   "keyword": "When "
 });
 formatter.step({
-  "line": 27,
+  "line": 31,
   "name": "I should have 1000 as balance after withdraw",
   "matchedColumns": [
     2
@@ -293,7 +344,7 @@ formatter.match({
   "location": "AC001_SampleBanking_StepDefinition.my_checking_account_has_a_balance_of_before_withdraw(int)"
 });
 formatter.result({
-  "duration": 315934,
+  "duration": 191680,
   "status": "passed"
 });
 formatter.match({
@@ -306,7 +357,7 @@ formatter.match({
   "location": "AC001_SampleBanking_StepDefinition.i_withdrawn_from_my_checking_account(int)"
 });
 formatter.result({
-  "duration": 539964919,
+  "duration": 3795900846,
   "status": "passed"
 });
 formatter.match({
@@ -319,125 +370,7 @@ formatter.match({
   "location": "AC001_SampleBanking_StepDefinition.i_should_have_as_balance_after_withdraw(int)"
 });
 formatter.result({
-  "duration": 207044398,
-  "status": "passed"
-});
-formatter.background({
-  "comments": [
-    {
-      "line": 11,
-      "value": "#Login information for generic user so all scenarios will use the same starting point"
-    }
-  ],
-  "line": 12,
-  "name": "",
-  "description": "",
-  "type": "background",
-  "keyword": "Background"
-});
-formatter.step({
-  "line": 13,
-  "name": "I am in the bank web app",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 14,
-  "name": "I am logged in",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "AC001_SampleBanking_StepDefinition.shouldNavigateToBankWebsite()"
-});
-formatter.result({
-  "duration": 2774530827,
-  "status": "passed"
-});
-formatter.match({
-  "location": "AC001_SampleBanking_StepDefinition.shouldLogin()"
-});
-formatter.result({
-  "duration": 568215879,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 32,
-  "name": "Make a withdraw",
-  "description": "",
-  "id": "manage-simple-transactions-in-a-banking-account;make-a-withdraw;;3",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 23,
-      "name": "@TC002"
-    },
-    {
-      "line": 23,
-      "name": "@signed-off"
-    }
-  ]
-});
-formatter.step({
-  "line": 25,
-  "name": "my checking account has a balance of 1500 before withdraw",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 26,
-  "name": "I withdraw 250 from my checking account",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "When "
-});
-formatter.step({
-  "line": 27,
-  "name": "I should have 1000 as balance after withdraw",
-  "matchedColumns": [
-    2
-  ],
-  "keyword": "Then "
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "1500",
-      "offset": 37
-    }
-  ],
-  "location": "AC001_SampleBanking_StepDefinition.my_checking_account_has_a_balance_of_before_withdraw(int)"
-});
-formatter.result({
-  "duration": 76800,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "250",
-      "offset": 11
-    }
-  ],
-  "location": "AC001_SampleBanking_StepDefinition.i_withdrawn_from_my_checking_account(int)"
-});
-formatter.result({
-  "duration": 528032908,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "1000",
-      "offset": 14
-    }
-  ],
-  "location": "AC001_SampleBanking_StepDefinition.i_should_have_as_balance_after_withdraw(int)"
-});
-formatter.result({
-  "duration": 205700248,
+  "duration": 668475482,
   "status": "passed"
 });
 });

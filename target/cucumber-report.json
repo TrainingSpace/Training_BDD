@@ -31,32 +31,62 @@
         "steps": [
           {
             "result": {
-              "duration": 3111564816,
+              "duration": 14134909001,
               "status": "passed"
             },
-            "line": 13,
-            "name": "I am in the bank web app",
+            "comments": [
+              {
+                "line": 13,
+                "value": "#Given I am in the bank web app"
+              },
+              {
+                "line": 14,
+                "value": "#And I am logged in"
+              }
+            ],
+            "line": 15,
+            "name": "a user access the bank web app",
             "match": {
-              "location": "AC001_SampleBanking_StepDefinition.shouldNavigateToBankWebsite()"
+              "location": "AC001_SampleBanking_StepDefinition.a_user_access_the_bank_web_app()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 636544397,
+              "duration": 5652587065,
               "status": "passed"
             },
-            "line": 14,
-            "name": "I am logged in",
+            "line": 16,
+            "name": "logs using the credentials",
             "match": {
-              "location": "AC001_SampleBanking_StepDefinition.shouldLogin()"
+              "location": "AC001_SampleBanking_StepDefinition.logs_using_the_credentials(DataTable)"
             },
+            "rows": [
+              {
+                "cells": [
+                  "bank_id",
+                  "username",
+                  "password",
+                  "url"
+                ],
+                "line": 17
+              },
+              {
+                "cells": [
+                  "25967",
+                  "banker",
+                  "training",
+                  "http://www.mykidsbank.org"
+                ],
+                "line": 18
+              }
+            ],
             "keyword": "And "
           }
         ]
       },
       {
-        "line": 17,
+        "line": 21,
         "name": "Make a deposit",
         "description": "",
         "id": "manage-simple-transactions-in-a-banking-account;make-a-deposit",
@@ -65,10 +95,10 @@
         "steps": [
           {
             "result": {
-              "duration": 1071285,
+              "duration": 3438369,
               "status": "passed"
             },
-            "line": 18,
+            "line": 22,
             "name": "my checking account has a balance of 1000",
             "match": {
               "arguments": [
@@ -83,10 +113,10 @@
           },
           {
             "result": {
-              "duration": 453659174,
+              "duration": 3803920647,
               "status": "passed"
             },
-            "line": 19,
+            "line": 23,
             "name": "I deposit 500 to my checking account",
             "match": {
               "arguments": [
@@ -101,10 +131,10 @@
           },
           {
             "result": {
-              "duration": 208738215,
+              "duration": 924187424,
               "status": "passed"
             },
-            "line": 20,
+            "line": 24,
             "name": "I should have 1500 as balance",
             "match": {
               "arguments": [
@@ -120,11 +150,11 @@
         ],
         "tags": [
           {
-            "line": 16,
+            "line": 20,
             "name": "@TC_001"
           },
           {
-            "line": 16,
+            "line": 20,
             "name": "@in_progress"
           }
         ]
@@ -144,32 +174,62 @@
         "steps": [
           {
             "result": {
-              "duration": 2775424117,
+              "duration": 11657333180,
               "status": "passed"
             },
-            "line": 13,
-            "name": "I am in the bank web app",
+            "comments": [
+              {
+                "line": 13,
+                "value": "#Given I am in the bank web app"
+              },
+              {
+                "line": 14,
+                "value": "#And I am logged in"
+              }
+            ],
+            "line": 15,
+            "name": "a user access the bank web app",
             "match": {
-              "location": "AC001_SampleBanking_StepDefinition.shouldNavigateToBankWebsite()"
+              "location": "AC001_SampleBanking_StepDefinition.a_user_access_the_bank_web_app()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 799394154,
+              "duration": 4088937556,
               "status": "passed"
             },
-            "line": 14,
-            "name": "I am logged in",
+            "line": 16,
+            "name": "logs using the credentials",
             "match": {
-              "location": "AC001_SampleBanking_StepDefinition.shouldLogin()"
+              "location": "AC001_SampleBanking_StepDefinition.logs_using_the_credentials(DataTable)"
             },
+            "rows": [
+              {
+                "cells": [
+                  "bank_id",
+                  "username",
+                  "password",
+                  "url"
+                ],
+                "line": 17
+              },
+              {
+                "cells": [
+                  "25967",
+                  "banker",
+                  "training",
+                  "http://www.mykidsbank.org"
+                ],
+                "line": 18
+              }
+            ],
             "keyword": "And "
           }
         ]
       },
       {
-        "line": 31,
+        "line": 35,
         "name": "Make a withdraw",
         "description": "",
         "id": "manage-simple-transactions-in-a-banking-account;make-a-withdraw;;2",
@@ -178,10 +238,10 @@
         "steps": [
           {
             "result": {
-              "duration": 315934,
+              "duration": 191680,
               "status": "passed"
             },
-            "line": 25,
+            "line": 29,
             "name": "my checking account has a balance of 1500 before withdraw",
             "match": {
               "arguments": [
@@ -199,10 +259,10 @@
           },
           {
             "result": {
-              "duration": 539964919,
+              "duration": 3795900846,
               "status": "passed"
             },
-            "line": 26,
+            "line": 30,
             "name": "I withdraw 250 from my checking account",
             "match": {
               "arguments": [
@@ -220,10 +280,10 @@
           },
           {
             "result": {
-              "duration": 207044398,
+              "duration": 668475482,
               "status": "passed"
             },
-            "line": 27,
+            "line": 31,
             "name": "I should have 1000 as balance after withdraw",
             "match": {
               "arguments": [
@@ -242,133 +302,11 @@
         ],
         "tags": [
           {
-            "line": 23,
-            "name": "@TC002"
-          },
-          {
-            "line": 23,
-            "name": "@signed-off"
-          }
-        ]
-      },
-      {
-        "comments": [
-          {
-            "line": 11,
-            "value": "#Login information for generic user so all scenarios will use the same starting point"
-          }
-        ],
-        "line": 12,
-        "name": "",
-        "description": "",
-        "type": "background",
-        "keyword": "Background",
-        "steps": [
-          {
-            "result": {
-              "duration": 2774530827,
-              "status": "passed"
-            },
-            "line": 13,
-            "name": "I am in the bank web app",
-            "match": {
-              "location": "AC001_SampleBanking_StepDefinition.shouldNavigateToBankWebsite()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 568215879,
-              "status": "passed"
-            },
-            "line": 14,
-            "name": "I am logged in",
-            "match": {
-              "location": "AC001_SampleBanking_StepDefinition.shouldLogin()"
-            },
-            "keyword": "And "
-          }
-        ]
-      },
-      {
-        "line": 32,
-        "name": "Make a withdraw",
-        "description": "",
-        "id": "manage-simple-transactions-in-a-banking-account;make-a-withdraw;;3",
-        "type": "scenario",
-        "keyword": "Scenario Outline",
-        "steps": [
-          {
-            "result": {
-              "duration": 76800,
-              "status": "passed"
-            },
-            "line": 25,
-            "name": "my checking account has a balance of 1500 before withdraw",
-            "match": {
-              "arguments": [
-                {
-                  "val": "1500",
-                  "offset": 37
-                }
-              ],
-              "location": "AC001_SampleBanking_StepDefinition.my_checking_account_has_a_balance_of_before_withdraw(int)"
-            },
-            "matchedColumns": [
-              0
-            ],
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 528032908,
-              "status": "passed"
-            },
-            "line": 26,
-            "name": "I withdraw 250 from my checking account",
-            "match": {
-              "arguments": [
-                {
-                  "val": "250",
-                  "offset": 11
-                }
-              ],
-              "location": "AC001_SampleBanking_StepDefinition.i_withdrawn_from_my_checking_account(int)"
-            },
-            "matchedColumns": [
-              1
-            ],
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 205700248,
-              "status": "passed"
-            },
             "line": 27,
-            "name": "I should have 1000 as balance after withdraw",
-            "match": {
-              "arguments": [
-                {
-                  "val": "1000",
-                  "offset": 14
-                }
-              ],
-              "location": "AC001_SampleBanking_StepDefinition.i_should_have_as_balance_after_withdraw(int)"
-            },
-            "matchedColumns": [
-              2
-            ],
-            "keyword": "Then "
-          }
-        ],
-        "tags": [
-          {
-            "line": 23,
             "name": "@TC002"
           },
           {
-            "line": 23,
+            "line": 27,
             "name": "@signed-off"
           }
         ]
