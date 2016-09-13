@@ -27,8 +27,15 @@ public class AC001_SampleBanking_StepDefinition {
 	
 	@Given("^a user access the bank web app$")
 	public void a_user_access_the_bank_web_app() throws Throwable {
+		
+		String Myurl = "http://www.mykidsbank.org";
+		
+		//String Myurl = System.getenv("application_url");
+	    System.out.println(Myurl);
+		
 		driver = new FirefoxDriver();
-		driver.navigate().to("http://www.mykidsbank.org");
+		//driver.navigate().to(Myurl);
+		driver.get("http://www.mykidsbank.org");
 	}
 
 	@And("^logs using the credentials$")
