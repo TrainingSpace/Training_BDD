@@ -24,7 +24,7 @@ Feature: Manage simple transactions in a banking account
   # Include here the parametrization and data for positive and negative test
   
   
-  @TC002 @signed-off
+  @TC_002 @signed-off
   Scenario Outline: Make a withdraw
     Given my checking account has a balance greater than <withdrawn_amount> before withdraw
     When I withdraw <withdrawn_amount> from my checking account
