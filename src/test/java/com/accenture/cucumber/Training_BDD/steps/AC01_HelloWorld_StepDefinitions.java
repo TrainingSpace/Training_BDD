@@ -1,5 +1,6 @@
 package com.accenture.cucumber.Training_BDD.steps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -13,11 +14,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Created by Fernanda on 9/16/2016.
  */
-public class AC002_HelloWorld_StepDefinitions {
+public class AC01_HelloWorld_StepDefinitions {
 
     WebDriver driver;
 
-    @Given("the user navigates to Google home page")
+    @Given("^the user navigates to Google home page$")
     public void theUserIsOnTheGoogleHomePage() throws Throwable {
 
         driver = StartWebDriver();
@@ -25,14 +26,14 @@ public class AC002_HelloWorld_StepDefinitions {
 
     }
 
-    @When("the user performs a search for '(.*)'")
-    public void theUserPerformsASearchByKeyword(String keywords) {
+    @When("^the user performs a search for Cucumber BDD$")
+    public void theUserPerformsASearchByKeyword() {
 
-        driver.findElement(By.name("q")).sendKeys(keywords, Keys.ENTER);
+        driver.findElement(By.name("q")).sendKeys("Cucumber BDD", Keys.ENTER);
 
     }
 
-    @Then("they should see that the search was performed")
+    @Then("^they should see that the search was performed$")
     public void theyShouldSeeThatTheSearchWasPerformed() {
 
         assertThat(driver.getTitle().contains("Google Search"));

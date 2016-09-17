@@ -3,12 +3,12 @@
 #Creation date: September 16, 2016
 @HelloWorld
 Feature: Search for definitions
-  In order to understand a word that I don't know
+  In order to understand what is Cucumber BDD
   As a user
-  I want to be able to look up the meaning of the word
+  I want to be able to look up the meaning of Cucumber BDD
 
   @GoogleSearch
-  Scenario: Make a default Google search
+  Scenario: Make a Google search
     Given the user navigates to Google home page
-    When the user performs a search for 'Cucumber BDD'
+    When the user performs a search for Cucumber BDD
     Then they should see that the search was performed

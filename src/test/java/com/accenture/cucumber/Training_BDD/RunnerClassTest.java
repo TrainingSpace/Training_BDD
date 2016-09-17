@@ -7,7 +7,8 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions( 
   plugin = {"pretty", "json:target/cucumber-report.json", "html:target/cucumber-htmlreport"},
-  features = {"src/test/resources/features"}
+  features = {"src/test/resources/features"},
+  tags = {"@DataTables"}
   ) 
 
 public class RunnerClassTest {
