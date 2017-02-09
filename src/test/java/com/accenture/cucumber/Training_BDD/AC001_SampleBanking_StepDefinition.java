@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import cucumber.api.DataTable;
@@ -14,6 +16,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class AC001_SampleBanking_StepDefinition {
 
@@ -31,9 +34,19 @@ public class AC001_SampleBanking_StepDefinition {
 		String Myurl = "http://www.mykidsbank.org";
 		
 		//String Myurl = System.getenv("application_url");
-	    System.out.println(Myurl);
-		
-		driver = new FirefoxDriver();
+	    //System.out.println(Myurl);
+
+
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("no-sandbox");
+		options.addArguments("start-maximized");
+		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+		driver = new ChromeDriver(capabilities);
+
+
+		//driver = new FirefoxDriver();
 		//driver.navigate().to(Myurl);
 		driver.get("http://www.mykidsbank.org");
 	}
