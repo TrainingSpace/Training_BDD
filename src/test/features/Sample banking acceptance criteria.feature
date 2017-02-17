@@ -34,3 +34,9 @@ Feature: Manage simple transactions in a banking account
       | withdrawn_amount |
       |              250 |
       |             1000 |
+
+    Scenario: Transfer funds
+      Given Transfer page is loaded
+      And  form to transfer funds is populated
+      When  I confirm to complete transfer operation
+      Then A confirmation is displayed
