@@ -226,9 +226,11 @@ public class AC001_SampleBanking_StepDefinition {
 			String strTestSetName = "Selenium";
 			String strTestInstance = "1";
 			String strEnvironment = "";
-			String strRunStatus = "Failed";
+			String strRunStatus = "Passed";
 			String strDuration = "10";
-			String strJenkinsBuildNumber = "999";
+			String strJenkinsBuildNumber = System.getenv("BUILD_NUMBER");
+            System.out.println("RESULT ====== "System.getenv("RESULT"));
+            System.out.println("DURATION ====== "System.getenv("DURATION"));
 
 			new ALMUpdater().almUpdateTestStatus(strTestId, strTestSetFolderPath, strTestSetName, strTestInstance, strEnvironment, strRunStatus, strDuration, strJenkinsBuildNumber);
 
