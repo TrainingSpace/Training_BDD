@@ -24,19 +24,19 @@ Feature: Manage simple transactions in a banking account
   # Include here the parametrization and data for positive and negative test
   
   
-  @TC002 @signed-off
-  Scenario Outline: Make a withdraw
-    Given my checking account has a balance greater than <withdrawn_amount> before withdraw
-    When I withdraw <withdrawn_amount> from my checking account
-    Then I should have less <withdrawn_amount> as balance
+  #@TC002 @signed-off
+  #Scenario Outline: Make a withdraw
+  #  Given my checking account has a balance greater than <withdrawn_amount> before withdraw
+  #  When I withdraw <withdrawn_amount> from my checking account
+  #  Then I should have less <withdrawn_amount> as balance
 
-    Examples: 
-      | withdrawn_amount |
-      |              250 |
-      |             1000 |
+  #  Examples:
+  #    | withdrawn_amount |
+  #    |              250 |
+  #    |             1000 |
 
-    Scenario: Transfer funds
-      Given Transfer page is loaded
-      And  form to transfer funds is populated
-      When  I confirm to complete transfer operation
-      Then A confirmation is displayed
+    #Scenario: Transfer funds
+    #  Given Transfer page is loaded
+    #  And  form to transfer funds is populated
+    #  When  I confirm to complete transfer operation
+    #  Then A confirmation is displayed

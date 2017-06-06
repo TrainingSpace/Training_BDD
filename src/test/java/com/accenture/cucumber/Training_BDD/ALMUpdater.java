@@ -1,11 +1,17 @@
-package com.disney.utils.almUpdater;
+package com.accenture.cucumber.Training_BDD;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.StringReader;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.bootstrap.DOMImplementationRegistry;
+import org.w3c.dom.ls.DOMImplementationLS;
+import org.w3c.dom.ls.LSSerializer;
+import org.xml.sax.InputSource;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.Files;
@@ -16,16 +22,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.bootstrap.DOMImplementationRegistry;
-import org.w3c.dom.ls.DOMImplementationLS;
-import org.w3c.dom.ls.LSSerializer;
-import org.xml.sax.InputSource;
 
 public class ALMUpdater {
 	/**
@@ -242,10 +238,10 @@ public class ALMUpdater {
 	public static class Constants {
 		public static final String HOST = "http://dtssalm-qa.disney.com/qcbin"; // Make sure that there is no slash at the end!
 		public static final String PORT = "9090";
-		public static final String USERNAME = System.getenv("almUser");
-		public static final String PASSWORD = System.getenv("almPass");
-		public static final String DOMAIN = "WDPR_COMPOSITE";
-		public static final String PROJECT = "WDPRT_COMPOSITE";
+		public static final String USERNAME = "COELF003";//System.getenv("almUser");
+		public static final String PASSWORD = "MyJunho177";//System.getenv("almPass");
+		public static final String DOMAIN = "TRAINING";
+		public static final String PROJECT = "TCoE_Sample_Data";
 
 		//		public static final String HOST = "http://cmnckapv0099.swna.wdpr.disney.com:9090/qcbin";
 		//		public static final String PORT = "9090";
@@ -639,6 +635,7 @@ public class ALMUpdater {
 		String strTestcyclID = "";
 		String strTestInstancesUrl = "";
 		try {
+
 			//1. Setup ALM connection. URL, credential and projects are defined in CONSTANTS object
 			conn.init(new HashMap<String, String>(), Constants.HOST, Constants.DOMAIN, Constants.PROJECT);
 			alm.login(Constants.USERNAME, Constants.PASSWORD);
@@ -735,6 +732,7 @@ public class ALMUpdater {
 			//////////Put
 			System.out.println("almUpdateTestStatus: response.toString() = ");
 			System.out.println(formatXML(response.toString()));
+
 		} catch (Exception e) {
 			System.out.println("almUpdateTestStatus: Exception = " + e.toString());
 		} finally {
@@ -1064,3 +1062,4 @@ public class ALMUpdater {
 		}
 	}
 }
+

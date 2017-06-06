@@ -1,7 +1,11 @@
 package com.accenture.cucumber.Training_BDD;
 
-import java.util.List;
-
+import cucumber.api.DataTable;
+import cucumber.api.java.After;
+import cucumber.api.java.en.And;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -9,14 +13,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-
-import cucumber.api.DataTable;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
+import java.util.List;
+
 
 public class AC001_SampleBanking_StepDefinition {
 
@@ -214,5 +214,29 @@ public class AC001_SampleBanking_StepDefinition {
 			dAfterBalance = Double.valueOf(sAfterBalance);
 
 		Assert.assertEquals((dBeforeBalance - arg1), dAfterBalance, 0);
+	}
+
+	@After
+	public void SyncResultsToAALM() {
+		System.out.println("@AfterMethod:start ##################################################################");
+
+		try{
+			String strTestId = "216";
+			String strTestSetFolderPath = "Root\\Tools_Integration\\Selenium";
+			String strTestSetName = "Selenium";
+			String strTestInstance = "1";
+			String strEnvironment = "";
+			String strRunStatus = "Passed";
+			String strDuration = "10";
+			String strJenkinsBuildNumber = "999";
+
+			new ALMUpdater().almUpdateTestStatus(strTestId, strTestSetFolderPath, strTestSetName, strTestInstance, strEnvironment, strRunStatus, strDuration, strJenkinsBuildNumber);
+
+		} catch (Exception e) {
+			System.out.println("@AfterMethod: Exception = " + e.toString());
+			//e.printStackTrace();
+		} finally {
+			System.out.println("\n@AfterMethod:finally ##################################################################");
+		}
 	}
 }
