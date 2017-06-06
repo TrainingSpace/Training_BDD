@@ -686,9 +686,9 @@ public class ALMUpdater {
 			strDataXML += "<Field Name=\"testcycl-id\"><Value>" + strTestcyclID + "</Value></Field>";
 			////////////////    Run: 07-Apr-2017 11:41:51
 			// Rename the run to match with the Jenkins build #
-			//strDataXML += "<Field Name=\"name\"><Value>Run from Java REST API Jenkins Build " + strJenkinsBuildNumber + "</Value></Field>";
 			strDataXML += "<Field Name=\"name\"><Value>TCoE ALM REST API update from Jenkins Build " + strJenkinsBuildNumber + "</Value></Field>";
 			strDataXML += "<Field Name=\"owner\"><Value>" + Constants.USERNAME + "</Value></Field>";
+			// First status when creating the run = NOT COMPLETED
 			strDataXML += "<Field Name=\"status\"><Value>Not Completed</Value></Field>";
 			strDataXML += "<Field Name=\"subtype-id\"><Value>hp.qc.run.MANUAL</Value></Field>";
 			strDataXML += "<Field Name=\"duration\"><Value>" + strDuration + "</Value></Field>";
