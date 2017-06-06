@@ -229,8 +229,8 @@ public class AC001_SampleBanking_StepDefinition {
 			String strRunStatus = "Passed";
 			String strDuration = "10";
 			String strJenkinsBuildNumber = System.getenv("BUILD_NUMBER");
-            System.out.println("RESULT ====== "System.getenv("RESULT"));
-            System.out.println("DURATION ====== "System.getenv("DURATION"));
+            System.out.println("RESULT ====== "+ System.getenv("RESULT"));
+            System.out.println("DURATION ====== "+ System.getenv("DURATION"));
 
 			new ALMUpdater().almUpdateTestStatus(strTestId, strTestSetFolderPath, strTestSetName, strTestInstance, strEnvironment, strRunStatus, strDuration, strJenkinsBuildNumber);
 
