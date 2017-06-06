@@ -226,7 +226,7 @@ public class AC001_SampleBanking_StepDefinition {
 			String strTestSetName = "Selenium";
 			String strTestInstance = "1";
 			String strEnvironment = "";
-			String strRunStatus = "Passed";
+			String strRunStatus = "Failed";
 			String strDuration = "10";
 			String strJenkinsBuildNumber = "999";
 

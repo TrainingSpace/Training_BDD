@@ -637,6 +637,7 @@ public class ALMUpdater {
 
 			//1. Setup ALM connection. URL, credential and projects are defined in CONSTANTS object
 			conn.init(new HashMap<String, String>(), Constants.HOST, Constants.DOMAIN, Constants.PROJECT);
+			System.out.println(System.getenv("BUILD_NUMBER"));
 			alm.login(Constants.USERNAME, Constants.PASSWORD);
 			conn.getQCSession();
 
