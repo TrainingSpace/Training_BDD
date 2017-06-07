@@ -19,7 +19,7 @@ public class JenkinsCLIWrapper {
     public static void main(String args[]) throws IOException, ParseException
     {
         //String sURL = "http://fefezinha.com:8080/jenkins/job/Training_BDD/lastBuild/api/json";
-        String sURL = "http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/24/api/json";
+        String sURL = "http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/lastBuild/api/json";
 
         //parse the URL to JSONObject
         JSONObject lastBuild = jsonParse(sURL);
@@ -36,10 +36,14 @@ public class JenkinsCLIWrapper {
     public static JSONObject jsonParse(String jsonURL) throws IOException, ParseException
     {
         URL url = new URL(jsonURL);
+        System.out.println("jsonParse... URL: " + url);
 
+        System.out.println("jsonParse... setting up HTTP connection");
         HttpURLConnection request1 = (HttpURLConnection) url.openConnection();
+        System.out.println("jsonParse... initiate GET request");
         request1.setRequestMethod("GET");
         request1.connect();
+        System.out.println("jsonParse... connection successful");
 
         InputStream is = request1.getInputStream();
         BufferedReader bf_reader = new BufferedReader(new InputStreamReader(is));
@@ -47,10 +51,12 @@ public class JenkinsCLIWrapper {
         String line = null;
 
         try {
+            System.out.println("jsonParse... appending json lines");
             while ((line = bf_reader.readLine()) != null) {
                 sb.append(line).append("\n");
             }
-        } catch (IOException e) {
+            System.out.println("jsonParse... append completed");
+        } catch (IOException e) { System.out.println("jsonParse... issue parsing json. " + e);
         } finally {
             try {
                 is.close();
@@ -61,7 +67,7 @@ public class JenkinsCLIWrapper {
         String responseBody = sb.toString();
         JSONParser parser = new JSONParser();
         Object obj = parser.parse(responseBody);
-
+        System.out.println("jsonParse... parse of json completed");
         return (JSONObject)obj;
     }
 }
