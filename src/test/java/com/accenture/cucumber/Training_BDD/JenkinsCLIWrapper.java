@@ -19,7 +19,7 @@ public class JenkinsCLIWrapper {
     public static void main(String args[]) throws IOException, ParseException
     {
         JenkinsCLIWrapper wrapper = new JenkinsCLIWrapper();
-        LastBuildObject build = wrapper.new LastBuildObject();
+        LastBuildObject build = wrapper.new LastBuildObject("http://localhost:8080/job/Selenium_ALM_Sync/lastBuild/api/json");
 
         System.out.println("Result: " + build.buildResult);
         System.out.println("Duration: " + build.duration);
@@ -28,13 +28,13 @@ public class JenkinsCLIWrapper {
     public class LastBuildObject
     {
         public JSONObject lastBuild;
-        public String sURL = "http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/lastBuild/api/json";
+        //public String sURL = "http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/lastBuild/api/json";
         public String buildResult;
         public Long duration;
 
-        public LastBuildObject() throws IOException, ParseException
+        public LastBuildObject(String jsonURL) throws IOException, ParseException
         {
-            JSONObject lastBuild = jsonParse(sURL);
+            JSONObject lastBuild = jsonParse(jsonURL);
 
             buildResult = (String) lastBuild.get("result");
             duration = (Long) lastBuild.get("duration");
