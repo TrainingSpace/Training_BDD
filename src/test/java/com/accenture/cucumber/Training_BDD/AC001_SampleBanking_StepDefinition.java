@@ -223,7 +223,7 @@ public class AC001_SampleBanking_StepDefinition {
 		try{
 
 			JenkinsXMLWrapper.XMLRoot root;
-            root = new JenkinsXMLWrapper.XMLRoot("lastBuild","http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/21/api/xml");
+            root = new JenkinsXMLWrapper.XMLRoot("lastBuild","http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/lastBuild/api/xml");
 
 			// Translate Jenkins status into ALM execution status:
 			String status = "No Run";
