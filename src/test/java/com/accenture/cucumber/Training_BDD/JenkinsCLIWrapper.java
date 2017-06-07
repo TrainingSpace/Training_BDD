@@ -18,20 +18,29 @@ public class JenkinsCLIWrapper {
 
     public static void main(String args[]) throws IOException, ParseException
     {
-        //String sURL = "http://fefezinha.com:8080/jenkins/job/Training_BDD/lastBuild/api/json";
-        String sURL = "http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/lastBuild/api/json";
+        JenkinsCLIWrapper wrapper = new JenkinsCLIWrapper();
+        LastBuildObject build = wrapper.new LastBuildObject();
 
-        //parse the URL to JSONObject
-        JSONObject lastBuild = jsonParse(sURL);
-
-        //Reading the String
-        String buildResult = (String) lastBuild.get("result");
-        Long duration = (Long) lastBuild.get("duration");
-
-        //Printing all the values
-        System.out.println("Result: " + buildResult);
-        System.out.println("Duration: " + duration);
+        System.out.println("Result: " + build.buildResult);
+        System.out.println("Duration: " + build.duration);
     }
+
+    public class LastBuildObject
+    {
+        public JSONObject lastBuild;
+        public String sURL = "http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/lastBuild/api/json";
+        public String buildResult;
+        public Long duration;
+
+        public LastBuildObject() throws IOException, ParseException
+        {
+            JSONObject lastBuild = jsonParse(sURL);
+
+            buildResult = (String) lastBuild.get("result");
+            duration = (Long) lastBuild.get("duration");
+        }
+    }
+
 
     public static JSONObject jsonParse(String jsonURL) throws IOException, ParseException
     {
