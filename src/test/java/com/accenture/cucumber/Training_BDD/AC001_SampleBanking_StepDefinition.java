@@ -223,13 +223,12 @@ public class AC001_SampleBanking_StepDefinition {
 		try{
 
 			JenkinsXMLWrapper.XMLRoot root;
-            root = new JenkinsXMLWrapper.XMLRoot("lastBuild","http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/lastBuild/api/xml");
+            root = new JenkinsXMLWrapper.XMLRoot("lastBuild","http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/21/api/xml");
 
 			// Translate Jenkins status into ALM execution status:
 			String status = "No Run";
-
-			switch (root.something.node(16).getText()){
-				case "PASSED": status = "Passed";
+			switch (root.something.node(19).getText()){
+				case "SUCCESS": status = "Passed";
 					break;
 				case "FAILURE": status = "Failed";
 					break;
@@ -237,6 +236,10 @@ public class AC001_SampleBanking_StepDefinition {
 					break;
 			}
 
+			//Calculate execution duration by converting Jenkins duration (milliseconds) into ALM duration (seconds)
+            Integer iDuration = 0;
+            iDuration = Integer.valueOf(root.something.node(12).getText());
+            iDuration = iDuration / 1000;
 
 			String strTestId = "216";
 			String strTestSetFolderPath = "Root\\Tools_Integration\\Selenium";
@@ -244,8 +247,13 @@ public class AC001_SampleBanking_StepDefinition {
 			String strTestInstance = "1"; // it means that it will update only the first instance of this script in this test set. Example: [1]Script A - ok. [2]Script A - ignored.
 			String strEnvironment = "";
 			String strRunStatus = status;//"Passed";
-			String strDuration = root.something.node(9).getText();//"10";
-			String strJenkinsBuildNumber = System.getenv("BUILD_NUMBER");
+			String strDuration = String.valueOf(iDuration);//"10";
+
+            // Adjust Jenkins build number in case the execution is outside from Jenkins
+            String strJenkinsBuildNumber = "";
+            if (System.getenv("BUILD_NUMBER") != null ){
+                strJenkinsBuildNumber = System.getenv("BUILD_NUMBER");
+            }
 
 			new ALMUpdater().almUpdateTestStatus(strTestId, strTestSetFolderPath, strTestSetName, strTestInstance, strEnvironment, strRunStatus, strDuration, strJenkinsBuildNumber);
 
