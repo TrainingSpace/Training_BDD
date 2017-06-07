@@ -237,8 +237,8 @@ public class ALMUpdater {
 	 */
 	public static class Constants {
 		public static final String HOST = "http://dtssalm-qa.disney.com/qcbin"; // Make sure that there is no slash at the end!
-		public static final String USERNAME = System.getenv("almUser");
-		public static final String PASSWORD = System.getenv("almPass");
+		public static final String USERNAME = "COELF003";//System.getenv("almUser");
+		public static final String PASSWORD = "MyJunho177";//System.getenv("almPass");
 		public static final String DOMAIN = "TRAINING";
 		public static final String PROJECT = "TCoE_Sample_Data";
 

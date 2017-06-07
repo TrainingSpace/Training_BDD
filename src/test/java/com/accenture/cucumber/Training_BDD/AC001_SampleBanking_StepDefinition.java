@@ -223,10 +223,10 @@ public class AC001_SampleBanking_StepDefinition {
 		System.out.println("@AfterMethod:start ##################################################################\n");
 
 		try{
-			String sURL = "http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/lastBuild/api/json";
-
-			String buildResult = "Passed";
-			Long lDuration = Long.valueOf(50);
+            Long lDuration = Long.valueOf(50);
+		    Integer iDuration = 0;
+            String buildResult = "SUCCESS";
+            String sURL = "http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/lastBuild/api/json";
 /*
 			//parse the URL to JSONObject
 			JSONObject lastBuild = JenkinsCLIWrapper.jsonParse(sURL);
@@ -236,10 +236,6 @@ public class AC001_SampleBanking_StepDefinition {
 			Long lDuration = (Long) lastBuild.get("duration");
 
 */
-			//Printing all the values
-			System.out.println("Result: " + buildResult);
-			System.out.println("Duration: " + lDuration);
-
 			// Translate Jenkins status into ALM execution status:
 			String status = "No Run";
 			switch (buildResult){
@@ -252,8 +248,11 @@ public class AC001_SampleBanking_StepDefinition {
 			}
 
 			//Calculate execution duration by converting Jenkins duration (milliseconds) into ALM duration (seconds)
-            Integer iDuration = 0;
             iDuration = lDuration.intValue() / 1000;
+
+            //Printing all the values
+            System.out.println("Result: " + buildResult);
+            System.out.println("Duration: " + iDuration);
 
 			String strTestId = "216";
 			String strTestSetFolderPath = "Root\\Tools_Integration\\Selenium";
