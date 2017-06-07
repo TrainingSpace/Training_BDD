@@ -227,7 +227,7 @@ public class AC001_SampleBanking_StepDefinition {
 
 			// Translate Jenkins status into ALM execution status:
 			String status = "No Run";
-			switch (root.something.node(16).getText()){
+			switch (root.something.node(18).getText()){
 				case "SUCCESS": status = "Passed";
 					break;
 				case "FAILURE": status = "Failed";
@@ -238,7 +238,7 @@ public class AC001_SampleBanking_StepDefinition {
 
 			//Calculate execution duration by converting Jenkins duration (milliseconds) into ALM duration (seconds)
             Integer iDuration = 0;
-            iDuration = Integer.valueOf(root.something.node(9).getText());
+            iDuration = Integer.valueOf(root.something.node(11).getText());
             iDuration = iDuration / 1000;
 
 			String strTestId = "216";
