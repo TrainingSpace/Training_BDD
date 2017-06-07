@@ -223,10 +223,19 @@ public class AC001_SampleBanking_StepDefinition {
 		try{
 
 			JenkinsXMLWrapper.XMLRoot root;
-            //root = new JenkinsXMLWrapper.XMLRoot("lastBuild","http://localhost:8080/job/Selenium_ALM_Sync/lastBuild/api/xml");
-			root = new JenkinsXMLWrapper.XMLRoot("lastBuild","http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/lastBuild/api/xml");
-			//System.out.println("\nduration = " + root.jobs.get(1).duration);
-			//System.out.println("\nresult = " + root.jobs.get(1).result);
+            root = new JenkinsXMLWrapper.XMLRoot("lastBuild","http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/lastBuild/api/xml");
+
+			// Translate Jenkins status into ALM execution status:
+			String status = "No Run";
+
+			switch (root.something.node(16).getText()){
+				case "PASSED": status = "Passed";
+					break;
+				case "FAILURE": status = "Failed";
+					break;
+				default: status = "Not Completed";
+					break;
+			}
 
 
 			String strTestId = "216";
@@ -234,17 +243,16 @@ public class AC001_SampleBanking_StepDefinition {
 			String strTestSetName = "Selenium";
 			String strTestInstance = "1"; // it means that it will update only the first instance of this script in this test set. Example: [1]Script A - ok. [2]Script A - ignored.
 			String strEnvironment = "";
-			String strRunStatus = "Passed";
-			String strDuration = root.something.node(10).getText();//"10";
+			String strRunStatus = status;//"Passed";
+			String strDuration = root.something.node(9).getText();//"10";
 			String strJenkinsBuildNumber = System.getenv("BUILD_NUMBER");
 
 			new ALMUpdater().almUpdateTestStatus(strTestId, strTestSetFolderPath, strTestSetName, strTestInstance, strEnvironment, strRunStatus, strDuration, strJenkinsBuildNumber);
 
 		} catch (Exception e) {
 			System.out.println("@AfterMethod: Exception = " + e.toString());
-			//e.printStackTrace();
 		} finally {
-			System.out.println("\n@AfterMethod:finally ##################################################################");
+			System.out.println("\n@AfterMethod:finally ##################################################################\n");
 		}
 	}
 }
