@@ -31,6 +31,7 @@ public class JenkinsXMLWrapper {
 
                     case "lastBuild":
                         something = dom.getRootElement();
+                        something.selectSingleNode("duration");
                         System.out.println("duration = " + something.node(11).getText());
                         System.out.println("\nresult = " + something.node(18).getText());
                         break;

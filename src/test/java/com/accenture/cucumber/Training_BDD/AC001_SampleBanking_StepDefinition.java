@@ -6,6 +6,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.json.simple.JSONObject;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -16,6 +17,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.List;
+
+import static com.accenture.cucumber.Training_BDD.JenkinsCLIWrapper.jsonParse;
 
 
 public class AC001_SampleBanking_StepDefinition {
@@ -222,12 +225,26 @@ public class AC001_SampleBanking_StepDefinition {
 
 		try{
 
-			JenkinsXMLWrapper.XMLRoot root;
-            root = new JenkinsXMLWrapper.XMLRoot("lastBuild","http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/lastBuild/api/xml");
+			//JenkinsXMLWrapper.XMLRoot root;
+            //root = new JenkinsXMLWrapper.XMLRoot("lastBuild","http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/lastBuild/api/xml");
+
+			//String sURL = "http://fefezinha.com:8080/jenkins/job/Training_BDD/lastBuild/api/json";
+			String sURL = "http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/lastBuild/api/json";
+
+			//parse the URL to JSONObject
+			JSONObject lastBuild = jsonParse(sURL);
+
+			//Reading the String
+			String buildResult = (String) lastBuild.get("result");
+			Long lDuration = (Long) lastBuild.get("duration");
+
+			//Printing all the values
+			System.out.println("Result: " + buildResult);
+			System.out.println("Duration: " + lDuration);
 
 			// Translate Jenkins status into ALM execution status:
 			String status = "No Run";
-			switch (root.something.node(18).getText()){
+			switch (buildResult){
 				case "SUCCESS": status = "Passed";
 					break;
 				case "FAILURE": status = "Failed";
@@ -238,8 +255,8 @@ public class AC001_SampleBanking_StepDefinition {
 
 			//Calculate execution duration by converting Jenkins duration (milliseconds) into ALM duration (seconds)
             Integer iDuration = 0;
-            iDuration = Integer.valueOf(root.something.node(11).getText());
-            iDuration = iDuration / 1000;
+            //iDuration = Integer.valueOf(lDuration);
+            iDuration = lDuration.intValue() / 1000;
 
 			String strTestId = "216";
 			String strTestSetFolderPath = "Root\\Tools_Integration\\Selenium";
