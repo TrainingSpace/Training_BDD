@@ -236,12 +236,16 @@ public class AC001_SampleBanking_StepDefinition {
 			Long lDuration = (Long) lastBuild.get("duration");
 
 */
+/*
             JenkinsCLIWrapper wrapper = new JenkinsCLIWrapper();
             JenkinsCLIWrapper.LastBuildObject build = wrapper.new LastBuildObject();
+            buildResult = build.buildResult;
+            lDuration = build.duration;
+*/
 
 			// Translate Jenkins status into ALM execution status:
 			String status = "No Run";
-			switch (build.buildResult){
+			switch (buildResult){
 				case "SUCCESS": status = "Passed";
 					break;
 				case "FAILURE": status = "Failed";
@@ -251,11 +255,12 @@ public class AC001_SampleBanking_StepDefinition {
 			}
 
 			//Calculate execution duration by converting Jenkins duration (milliseconds) into ALM duration (seconds)
-            iDuration = build.duration.intValue() / 1000;
+            //iDuration = lDuration.intValue() / 1000;
+            iDuration = 50;
 
             //Printing all the values
-            System.out.println("Result: " + build.buildResult);
-            System.out.println("Duration: " + build.duration);
+            System.out.println("Result: " + buildResult);
+            System.out.println("Duration: " + iDuration);
 
 			String strTestId = "216";
 			String strTestSetFolderPath = "Root\\Tools_Integration\\Selenium";
