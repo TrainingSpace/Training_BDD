@@ -18,7 +18,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.List;
 
-import static com.accenture.cucumber.Training_BDD.JenkinsCLIWrapper.jsonParse;
+//import static com.accenture.cucumber.Training_BDD.JenkinsCLIWrapper.jsonParse;
 
 
 public class AC001_SampleBanking_StepDefinition {
@@ -224,15 +224,10 @@ public class AC001_SampleBanking_StepDefinition {
 		System.out.println("@AfterMethod:start ##################################################################\n");
 
 		try{
-
-			//JenkinsXMLWrapper.XMLRoot root;
-            //root = new JenkinsXMLWrapper.XMLRoot("lastBuild","http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/lastBuild/api/xml");
-
-			//String sURL = "http://fefezinha.com:8080/jenkins/job/Training_BDD/lastBuild/api/json";
 			String sURL = "http://jenkins-tcoe-qa.disney.com/job/Selenium_ALM_Sync/lastBuild/api/json";
 
 			//parse the URL to JSONObject
-			JSONObject lastBuild = jsonParse(sURL);
+			JSONObject lastBuild = JenkinsCLIWrapper.jsonParse(sURL);
 
 			//Reading the String
 			String buildResult = (String) lastBuild.get("result");
@@ -255,7 +250,6 @@ public class AC001_SampleBanking_StepDefinition {
 
 			//Calculate execution duration by converting Jenkins duration (milliseconds) into ALM duration (seconds)
             Integer iDuration = 0;
-            //iDuration = Integer.valueOf(lDuration);
             iDuration = lDuration.intValue() / 1000;
 
 			String strTestId = "216";
@@ -263,16 +257,16 @@ public class AC001_SampleBanking_StepDefinition {
 			String strTestSetName = "Selenium";
 			String strTestInstance = "1"; // it means that it will update only the first instance of this script in this test set. Example: [1]Script A - ok. [2]Script A - ignored.
 			String strEnvironment = "";
-			String strRunStatus = status;//"Passed";
-			String strDuration = String.valueOf(iDuration);//"10";
+			String strRunStatus = status;
+			String strDuration = String.valueOf(iDuration);
 
             // Adjust Jenkins build number in case the execution is outside from Jenkins
-            String strJenkinsBuildNumber = "";
+            String strJenkinsBuildNumber = "999";
             if (System.getenv("BUILD_NUMBER") != null ){
                 strJenkinsBuildNumber = System.getenv("BUILD_NUMBER");
             }
 
-			new ALMUpdater().almUpdateTestStatus(strTestId, strTestSetFolderPath, strTestSetName, strTestInstance, strEnvironment, strRunStatus, strDuration, strJenkinsBuildNumber);
+			//new ALMUpdater().almUpdateTestStatus(strTestId, strTestSetFolderPath, strTestSetName, strTestInstance, strEnvironment, strRunStatus, strDuration, strJenkinsBuildNumber);
 
 		} catch (Exception e) {
 			System.out.println("@AfterMethod: Exception = " + e.toString());
